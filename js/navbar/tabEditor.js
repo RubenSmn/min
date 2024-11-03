@@ -32,14 +32,6 @@ const tabEditor = {
       currentURL = ''
     }
 
-    tabEditor.input.value = editingValue || currentURL
-    tabEditor.input.focus()
-    if (!editingValue) {
-      tabEditor.input.select()
-    }
-    // https://github.com/minbrowser/min/discussions/1506
-    tabEditor.input.scrollLeft = 0
-
     searchbar.show(tabEditor.input)
 
     if (showSearchbar !== false) {
@@ -49,6 +41,14 @@ const tabEditor = {
         searchbar.showResults('', null)
       }
     }
+
+    tabEditor.input.value = editingValue || currentURL
+    tabEditor.input.focus()
+    if (!editingValue) {
+      tabEditor.input.select()
+    }
+    // https://github.com/minbrowser/min/discussions/1506
+    tabEditor.input.scrollLeft = 0
 
     /* animation */
     if (tabs.count() > 1) {

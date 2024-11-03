@@ -2,7 +2,8 @@
   width: 100%;
   display: block;
   position: relative;
-  padding: 8px 9px 9px 9px;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
   cursor: pointer;
   transition: 0.2s transform, 0.2s opacity;
 }
@@ -15,22 +16,22 @@
   display: block;
 }
 .searchbar-item:hover {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 .searchbar-item:focus,
 .searchbar-item.fakefocus {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   outline: none;
 }
 .dark-theme .theme-background-color .searchbar-item:hover,
 .dark-mode .searchbar-item:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 .dark-theme .theme-background-color .searchbar-item:focus,
 .dark-theme .theme-background-color .searchbar-item.fakefocus,
 .dark-mode .searchbar-item:focus,
 .dark-mode .searchbar-item.fakefocus {
-  background-color: rgba(255, 255, 255, 0.14);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .searchbar-item .title {
