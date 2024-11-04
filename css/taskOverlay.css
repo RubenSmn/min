@@ -52,8 +52,10 @@
   position: absolute;
   top: var(--control-space-top);
   right: var(--control-space-right);
+  height: 36px;
+  width: 36px;
   z-index: 4;
-  padding: 0.5em;
+  padding: 0.5rem;
 }
 
 #switch-task-button.active {
@@ -308,7 +310,8 @@ body.dark-mode #task-overlay {
   color: dodgerblue;
 }
 
-.tab-drop-placeholder, .task-drop-placeholder {
+.tab-drop-placeholder,
+.task-drop-placeholder {
   opacity: 0.25;
 }
 
