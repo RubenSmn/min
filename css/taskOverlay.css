@@ -54,6 +54,9 @@
   right: var(--control-space-right);
   height: 36px;
   width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 4;
   padding: 0.5rem;
 }
