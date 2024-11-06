@@ -128,15 +128,20 @@ body.linux:not(.separate-titlebar) {
 }
 
 body.linux:not(.separate-titlebar) #linux-control-buttons {
-  position: absolute;
-  top: var(--control-space-top);
-  right: 9px;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  z-index: 9;
-  /* width: 76px; */
+  /* gap: 0.5rem; */
+  width: 36px;
   height: 36px;
+  transition: 200ms width;
+}
+
+body.linux:not(.separate-titlebar) #linux-control-buttons:hover {
+  width: calc(36px * 3);
+}
+
+body.linux:not(.separate-titlebar) #linux-control-buttons:hover :first-child {
+  order: 1;
 }
 
 #linux-control-buttons button {
@@ -144,6 +149,9 @@ body.linux:not(.separate-titlebar) #linux-control-buttons {
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 36px;
+  height: 100%;
+  padding: 0.5rem;
 }
 
 #linux-control-buttons button:hover:after {
