@@ -8,8 +8,7 @@
   outline: none;
   z-index: 2;
   padding-top: var(--control-space-top);
-  padding-left: var(--control-space-left);
-  padding-right: var(--control-space-right);
+  padding-inline: var(--control-space-left);
 }
 
 /* when the tab-group is white, we need a line to separate it from the webviews */
@@ -302,7 +301,7 @@ body.windows.dark-theme .navbar-action-button:not(:disabled):hover {
   padding-left: 0.5em;
 }
 .navbar-right-actions {
-  margin-right: 2.3em;
+  /* margin-right: 2.3em; */
 }
 
 .navbar-right-actions #add-tab-button {

@@ -37,55 +37,6 @@
       </div>
     </div>
 
-    <div id="linux-control-buttons" class="theme-text-color">
-      <button id="minimize-button">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M5 12h14" />
-        </svg>
-      </button>
-      <button id="maximize-button">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <rect width="16" height="16" x="3" y="3" rx="2" />
-        </svg>
-      </button>
-      <button id="close-button">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M18 6 6 18" />
-          <path d="m6 6 12 12" />
-        </svg>
-      </button>
-    </div>
-
     <div
       id="navbar"
       class="theme-background-color theme-text-color windowDragHandle"
@@ -138,6 +89,55 @@
           </svg>
         </button>
       </div>
+
+      <div id="linux-control-buttons" class="theme-text-color">
+        <button id="close-button" data-label="appMenuClose">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+        <button id="minimize-button" data-label="appMenuMinimize">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14" />
+          </svg>
+        </button>
+        <button id="maximize-button" data-label="appMenuWindow">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect width="16" height="16" x="3" y="3" rx="2" />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <button
@@ -145,6 +145,7 @@
       class="navbar-action-button theme-text-color windowDragHandle i"
       data-label="viewTasks"
       tabindex="-1"
+      hidden
     >
       <svg
         version="1.1"
