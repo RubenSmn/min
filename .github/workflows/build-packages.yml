@@ -1,5 +1,5 @@
 name: Build Package
-on: [workflow_dispatch]
+on: [push]
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -10,28 +10,12 @@ jobs:
             cmd: npm run buildDebian
             artifact: linux-deb-package
             path: dist/app/*.deb
-          - os: ubuntu-latest
-            cmd: npm run buildRedhat
-            artifact: linux-rpm-package
-            path: dist/app/*.rpm
           - os: windows-latest
             cmd: npm run buildWindows
             artifact: windows-package
             path: |
               dist/app/*.zip
               dist/app/*.exe
-          - os: macos-13
-            env:
-              SDKROOT: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
-            cmd: npm run buildMacIntel
-            artifact: darwin-x86-package
-            path: dist/app/*.zip
-          - os: macos-13
-            env:
-              SDKROOT: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
-            cmd: npm run buildMacArm
-            artifact: darwin-arm-package
-            path: dist/app/*.zip
     env:
       SDKROOT: ${{ matrix.env.SDKROOT }}
     steps:
