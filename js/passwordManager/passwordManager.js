@@ -8,6 +8,7 @@ const statistics = require('js/statistics.js')
 const Bitwarden = require('js/passwordManager/bitwarden.js')
 const OnePassword = require('js/passwordManager/onePassword.js')
 const Keychain = require('js/passwordManager/keychain.js')
+const Keyring = require('js/passwordManager/keyring.js')
 
 const PasswordManagers = {
   // List of supported password managers. Each password manager is expected to
@@ -16,6 +17,7 @@ const PasswordManagers = {
   managers: [
     new Bitwarden(),
     new OnePassword(),
+    new Keyring(),
     new Keychain()
   ],
   // Returns an active password manager, which is the one that is selected in app's

@@ -562,7 +562,7 @@ keychainViewLink.addEventListener('click', function () {
 })
 
 settings.listen('passwordManager', function (value) {
-  keychainViewLink.hidden = !(currentPasswordManager.name === 'Built-in password manager')
+  keychainViewLink.hidden = !(currentPasswordManager.name === 'Built-in password manager' || currentPasswordManager.name === 'Keyring')
 })
 
 /* proxy settings */

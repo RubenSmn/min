@@ -12,6 +12,9 @@ var passwordManagers = {
   '1Password': {
     name: '1Password'
   },
+  Keyring: {
+    name: 'Keyring'
+  },
   'Built-in password manager': {
     name: 'Built-in password manager'
   }
