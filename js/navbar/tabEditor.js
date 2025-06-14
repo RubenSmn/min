@@ -17,7 +17,6 @@ const tabEditor = {
       return;
     }
 
-    tabEditor.container.hidden = false;
     tabEditor.isShown = true;
 
     bookmarkStar.update(tabId, tabEditor.star);
@@ -49,37 +48,8 @@ const tabEditor = {
     }
     // https://github.com/minbrowser/min/discussions/1506
     tabEditor.input.scrollLeft = 0;
-
-    /* animation */
-    if (tabs.count() > 1) {
-      requestAnimationFrame(function () {
-        var item = document.querySelector(`.tab-item[data-tab="${tabId}"]`);
-        var originCoordinates = item.getBoundingClientRect();
-
-        var finalCoordinates = document
-          .querySelector("#tabs")
-          .getBoundingClientRect();
-
-        var translateX = Math.min(
-          Math.round(originCoordinates.x - finalCoordinates.x) * 0.45,
-          window.innerWidth
-        );
-
-        tabEditor.container.style.opacity = 0;
-        tabEditor.container.style.transform = `translateX(${translateX}px)`;
-        requestAnimationFrame(function () {
-          tabEditor.container.style.transition = "0.135s opacity";
-          tabEditor.container.style.opacity = 1;
-          tabEditor.container.style.transform = "";
-        });
-      });
-    }
   },
   hide: function () {
-    tabEditor.container.hidden = true;
-    tabEditor.container.removeAttribute("style");
-    tabEditor.isShown = false;
-
     tabEditor.input.blur();
     searchbar.hide();
 

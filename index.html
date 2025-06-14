@@ -64,9 +64,6 @@
         ></button>
       </div>
       <div id="tabs">
-        <div id="tab-editor" hidden>
-          <input id="tab-editor-input" spellcheck="false" />
-        </div>
         <div id="tabs-inner" role="tablist" class="has-thin-scrollbar"></div>
       </div>
       <div class="navbar-right-actions">
@@ -181,6 +178,9 @@
     </button>
 
     <div id="searchbar" class="theme-background-color theme-text-color">
+      <div id="tab-editor">
+        <input id="tab-editor-input" spellcheck="false" />
+      </div>
       <div class="top-answer-area"></div>
     </div>
 
@@ -331,9 +331,15 @@
       ></div>
       <div id="password-viewer-list"></div>
       <div id="password-viewer-import-container">
-        <button id="password-viewer-import"><span class="i carbon:document-import"></span><span data-string="importCredentials"></span></button>
-        <button id="password-viewer-export"><span class="i carbon:export"></span><span data-string="exportCredentials"></span></button>
-</div>
+        <button id="password-viewer-import">
+          <span class="i carbon:document-import"></span
+          ><span data-string="importCredentials"></span>
+        </button>
+        <button id="password-viewer-export">
+          <span class="i carbon:export"></span
+          ><span data-string="exportCredentials"></span>
+        </button>
+      </div>
     </div>
 
     <!-- add scripts in Gruntfile.js -->

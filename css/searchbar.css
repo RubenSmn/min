@@ -13,7 +13,7 @@
   width: 80%;
   max-width: 48rem;
   max-height: calc(100% - 125px);
-  overflow-y: auto;
+  overflow: auto;
   display: flex;
   flex-direction: column;
 }
