@@ -10,8 +10,7 @@ const PasswordManagers = require('passwordManager/passwordManager.js')
 
 const remoteMenu = require('remoteMenuRenderer.js')
 
-const webviewMenu = {
-  menuData: null,
+const webviewMenu = { menuData: null,
   showMenu: function (data, extraData) { // data comes from a context-menu event
     var currentTab = tabs.get(tabs.getSelected())
 
@@ -166,6 +165,27 @@ const webviewMenu = {
             var newTab = tabs.add({
               url: searchEngine.getCurrent().searchURL.replace('%s', encodeURIComponent(selection)),
               private: currentTab.private
+            })
+            browserUI.addTab(newTab, {
+              enterEditMode: false,
+              openInBackground: false
+            })
+          }
+        },
+        {
+          label: "Open as context for ChatGPT",
+          click: function () {
+            const url = new URL("https://chatgpt.com")
+            url.searchParams.append('q', `"""
+${selection}
+"""
+
+Use this for context and respond with "How can I help you?"`);
+            url.searchParams.append('temporary-chat', 'true')
+
+            const newTab = tabs.add({
+              url: url.toString(),
+              private: false, // prevents rate limiting, has temporary-chat so it doesn't clutter the history
             })
             browserUI.addTab(newTab, {
               enterEditMode: false,
